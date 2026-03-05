@@ -1,0 +1,43 @@
+<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="p-lg" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="currentColor" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="currentColor" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="p-scan" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="currentColor" stop-opacity="0"/>
+      <stop offset="50%" stop-color="currentColor" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g opacity="1">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+    <rect x="36" y="36" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.55" stroke-width="1" fill="currentColor" fill-opacity="0.07"/>
+    <circle cx="47" cy="47" r="4" fill="currentColor" opacity="0.55">
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g opacity="1">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="0.4s" repeatCount="indefinite"/>
+    <rect x="62" y="36" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.3" stroke-width="1" fill="currentColor" fill-opacity="0.03"/>
+    <circle cx="73" cy="47" r="2.5" fill="currentColor" opacity="0.3"/>
+  </g>
+  <g opacity="1">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="0.8s" repeatCount="indefinite"/>
+    <rect x="36" y="62" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.3" stroke-width="1" fill="currentColor" fill-opacity="0.03"/>
+    <circle cx="47" cy="73" r="2.5" fill="currentColor" opacity="0.3"/>
+  </g>
+  <g opacity="1">
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+    <rect x="62" y="62" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.45" stroke-width="1" fill="currentColor" fill-opacity="0.05"/>
+    <circle cx="73" cy="73" r="3" fill="currentColor" opacity="0.35">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <line x1="31" y1="60" x2="89" y2="60" stroke="url(#p-scan)" stroke-width="0.8">
+    <animate attributeName="y1" values="31;89;31" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="31;89;31" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.5s" repeatCount="indefinite"/>
+  </line>
+  <rect x="30" y="30" width="60" height="60" rx="13" stroke="url(#p-lg)" stroke-width="0.7" fill="none"/>
+</svg>
