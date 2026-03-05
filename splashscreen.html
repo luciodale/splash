@@ -307,7 +307,7 @@
       // CONFIGURABLE SECTIONS
       // Each: { title, description, svg (path in public/) }
       // ──────────────────────────────────────────────
-      var SECTIONS = [
+      const SECTIONS = [
         {
           title: "Spaces",
           description:
@@ -331,12 +331,12 @@
       // ──────────────────────────────────────────────
       // SLIDER ENGINE
       // ──────────────────────────────────────────────
-      var track = document.getElementById("track");
-      var viewport = document.getElementById("viewport");
-      var dotsContainer = document.getElementById("dots");
-      var count = SECTIONS.length;
+      const track = document.getElementById("track");
+      const viewport = document.getElementById("viewport");
+      const dotsContainer = document.getElementById("dots");
+      const count = SECTIONS.length;
 
-      var slideData = [SECTIONS[count - 1]].concat(SECTIONS, [SECTIONS[0]]);
+      const slideData = [SECTIONS[count - 1]].concat(SECTIONS, [SECTIONS[0]]);
 
       function loadSvgInline(container, path) {
         fetch(path)
@@ -350,23 +350,23 @@
       }
 
       slideData.forEach(function (s) {
-        var div = document.createElement("div");
+        const div = document.createElement("div");
         div.className = "slide";
 
-        var iconWrap = document.createElement("div");
+        const iconWrap = document.createElement("div");
         iconWrap.className = "slide-icon-wrap";
 
-        var icon = document.createElement("div");
+        const icon = document.createElement("div");
         icon.className = "slide-icon";
         loadSvgInline(icon, s.svg);
 
         iconWrap.appendChild(icon);
 
-        var title = document.createElement("div");
+        const title = document.createElement("div");
         title.className = "slide-title";
         title.textContent = s.title;
 
-        var desc = document.createElement("div");
+        const desc = document.createElement("div");
         desc.className = "slide-description";
         desc.textContent = s.description;
 
@@ -377,14 +377,14 @@
       });
 
       SECTIONS.forEach(function (_, i) {
-        var d = document.createElement("div");
+        const d = document.createElement("div");
         d.className = "dot" + (i === 0 ? " active" : "");
         dotsContainer.appendChild(d);
       });
-      var dots = dotsContainer.querySelectorAll(".dot");
+      const dots = dotsContainer.querySelectorAll(".dot");
 
-      var current = 1;
-      var busy = false;
+      let current = 1;
+      let busy = false;
 
       function setPos(idx, animate) {
         if (animate) track.classList.add("animated");
@@ -393,7 +393,7 @@
       }
 
       function syncDots() {
-        var real = (((current - 1) % count) + count) % count;
+        const real = (((current - 1) % count) + count) % count;
         dots.forEach(function (d, i) {
           d.classList.toggle("active", i === real);
         });
@@ -421,7 +421,7 @@
       setPos(current, false);
 
       // ──── Touch ────
-      var sx = 0,
+      let sx = 0,
         dx = 0,
         sy = 0,
         touching = false;
@@ -444,7 +444,7 @@
         function (e) {
           if (!touching) return;
           dx = e.touches[0].clientX - sx;
-          var dy = e.touches[0].clientY - sy;
+          const dy = e.touches[0].clientY - sy;
           if (Math.abs(dy) > Math.abs(dx) * 1.2) {
             touching = false;
             return;
@@ -461,14 +461,14 @@
           return;
         }
         touching = false;
-        var threshold = window.innerWidth * 0.2;
+        const threshold = window.innerWidth * 0.2;
         if (dx < -threshold) goTo(current + 1);
         else if (dx > threshold) goTo(current - 1);
         else setPos(current, true);
       });
 
       // ──── Auto-advance ────
-      var timer = setInterval(function () {
+      let timer = setInterval(function () {
         goTo(current + 1);
       }, 4500);
 
