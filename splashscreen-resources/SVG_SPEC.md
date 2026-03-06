@@ -29,8 +29,37 @@ Frame gradient (define in `<defs>`, replace `PREFIX` with your unique ID prefix)
 
 ## Colors
 
-- **Only use `currentColor`** — never hardcoded colors
-- The parent HTML sets `color` via CSS variables so it adapts to light/dark mode automatically
+- **Structural strokes** (outer frame, shape outlines): use `currentColor`
+- **Accent elements** (dots, indicators, scan lines, orbital dots): use accent gradient fills for a colorful touch
+- The parent HTML sets `color` via CSS variables so `currentColor` adapts to light/dark mode automatically
+
+### Accent Gradients
+
+Each SVG defines accent color stops via `<style>` with a `prefers-color-scheme` media query. Use unique class names per SVG (e.g., `a-c1`/`a-c2` for agent) to avoid collisions.
+
+| Mode | Color 1 (blue/teal) | Color 2 (purple) |
+|------|---------------------|-------------------|
+| Light | `#4a9fd4` | `#8b5fbf` |
+| Dark | `#5ea8c9` | `#9b4ea0` |
+
+Example `<defs>` block:
+
+```xml
+<linearGradient id="PREFIX-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" class="PREFIX-c1"/>
+  <stop offset="100%" class="PREFIX-c2"/>
+</linearGradient>
+<style>
+  .PREFIX-c1 { stop-color: #4a9fd4; }
+  .PREFIX-c2 { stop-color: #8b5fbf; }
+  @media (prefers-color-scheme: dark) {
+    .PREFIX-c1 { stop-color: #5ea8c9; }
+    .PREFIX-c2 { stop-color: #9b4ea0; }
+  }
+</style>
+```
+
+Apply via `fill="url(#PREFIX-accent)"` on accent elements (dots, indicators, scan lines).
 
 ## Strokes
 
@@ -113,7 +142,7 @@ Each SVG must use a unique prefix to avoid gradient/filter ID collisions when mu
 3. Define frame gradient in `<defs>`
 4. Content centered at (60,60), stays within 36–84 zone
 5. Outer frame rect at (30,30) 60x60 rx 13
-6. Only `currentColor`, no hardcoded colors
+6. `currentColor` for structural strokes; accent gradient for dots/indicators/scan lines
 7. Strokes 0.6–1.0, fills with low opacity
 8. Animations slow and subtle (2–10s), no jarring motion
 9. Keep it minimal — fewer elements reads cleaner

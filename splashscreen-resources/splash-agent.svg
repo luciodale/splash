@@ -1,49 +1,65 @@
 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="a-lg" x1="30%" y1="0%" x2="70%" y2="100%">
-      <stop offset="0%" stop-color="currentColor" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="currentColor" stop-opacity="0.12"/>
+      <stop offset="0%" class="a-c1" stop-opacity="0.8"/>
+      <stop offset="100%" class="a-c2" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="a-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" class="a-c1"/>
+      <stop offset="100%" class="a-c2"/>
     </linearGradient>
     <linearGradient id="a-scan" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="currentColor" stop-opacity="0"/>
-      <stop offset="50%" stop-color="currentColor" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+      <stop offset="0%" class="a-c1" stop-opacity="0"/>
+      <stop offset="50%" class="a-c2" stop-opacity="0.65"/>
+      <stop offset="100%" class="a-c1" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="a-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" class="a-c1" stop-opacity="0.1"/>
+      <stop offset="100%" class="a-c2" stop-opacity="0.05"/>
+    </linearGradient>
+    <style>
+      .a-c1 { stop-color: #4a9fd4; }
+      .a-c2 { stop-color: #8b5fbf; }
+      @media (prefers-color-scheme: dark) {
+        .a-c1 { stop-color: #5ea8c9; }
+        .a-c2 { stop-color: #9b4ea0; }
+      }
+    </style>
   </defs>
   <!-- step 1: top bar -->
   <g>
-    <rect x="40" y="40" width="40" height="6" rx="3" stroke="currentColor" stroke-opacity="0.45" stroke-width="0.8" fill="currentColor" fill-opacity="0.06">
-      <animate attributeName="fill-opacity" values="0.04;0.12;0.04" dur="3s" repeatCount="indefinite"/>
+    <rect x="40" y="40" width="40" height="6" rx="3" stroke="url(#a-accent)" stroke-opacity="0.5" stroke-width="0.8" fill="url(#a-accent)" fill-opacity="0.1">
+      <animate attributeName="fill-opacity" values="0.07;0.18;0.07" dur="3s" repeatCount="indefinite"/>
     </rect>
-    <circle cx="44" cy="43" r="1.5" fill="currentColor" opacity="0.5">
-      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    <circle cx="44" cy="43" r="1.8" fill="url(#a-accent)" opacity="0.85">
+      <animate attributeName="opacity" values="0.65;1;0.65" dur="3s" repeatCount="indefinite"/>
     </circle>
   </g>
   <!-- step 2: middle bar -->
   <g>
-    <rect x="40" y="52" width="40" height="6" rx="3" stroke="currentColor" stroke-opacity="0.35" stroke-width="0.8" fill="currentColor" fill-opacity="0.03">
-      <animate attributeName="fill-opacity" values="0.03;0.1;0.03" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+    <rect x="40" y="52" width="40" height="6" rx="3" stroke="url(#a-accent)" stroke-opacity="0.4" stroke-width="0.8" fill="url(#a-accent)" fill-opacity="0.06">
+      <animate attributeName="fill-opacity" values="0.05;0.15;0.05" dur="3s" begin="0.6s" repeatCount="indefinite"/>
     </rect>
-    <circle cx="44" cy="55" r="1.5" fill="currentColor" opacity="0.35">
-      <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+    <circle cx="44" cy="55" r="1.8" fill="url(#a-accent)" opacity="0.65">
+      <animate attributeName="opacity" values="0.5;0.95;0.5" dur="3s" begin="0.6s" repeatCount="indefinite"/>
     </circle>
   </g>
   <!-- step 3: bottom bar -->
   <g>
-    <rect x="40" y="64" width="40" height="6" rx="3" stroke="currentColor" stroke-opacity="0.25" stroke-width="0.8" fill="currentColor" fill-opacity="0.02">
-      <animate attributeName="fill-opacity" values="0.02;0.08;0.02" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+    <rect x="40" y="64" width="40" height="6" rx="3" stroke="url(#a-accent)" stroke-opacity="0.3" stroke-width="0.8" fill="url(#a-accent)" fill-opacity="0.04">
+      <animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="3s" begin="1.2s" repeatCount="indefinite"/>
     </rect>
-    <circle cx="44" cy="67" r="1.5" fill="currentColor" opacity="0.2">
-      <animate attributeName="opacity" values="0.15;0.6;0.15" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+    <circle cx="44" cy="67" r="1.8" fill="url(#a-accent)" opacity="0.5">
+      <animate attributeName="opacity" values="0.35;0.85;0.35" dur="3s" begin="1.2s" repeatCount="indefinite"/>
     </circle>
   </g>
   <!-- connecting line between steps -->
-  <line x1="44" y1="46" x2="44" y2="52" stroke="currentColor" stroke-opacity="0.12" stroke-width="0.6"/>
-  <line x1="44" y1="58" x2="44" y2="64" stroke="currentColor" stroke-opacity="0.12" stroke-width="0.6"/>
+  <line x1="44" y1="46" x2="44" y2="52" stroke="url(#a-accent)" stroke-opacity="0.25" stroke-width="0.7"/>
+  <line x1="44" y1="58" x2="44" y2="64" stroke="url(#a-accent)" stroke-opacity="0.25" stroke-width="0.7"/>
   <!-- traveling pulse down the pipeline -->
-  <circle r="1.5" fill="currentColor" opacity="0.6">
+  <circle r="1.8" fill="url(#a-accent)" opacity="0.9">
     <animateMotion dur="3s" repeatCount="indefinite" path="M44,43 L44,55 L44,67"/>
-    <animate attributeName="opacity" values="0.7;0.3;0.7;0.3;0.7" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0.5;1;0.5;1" dur="3s" repeatCount="indefinite"/>
   </circle>
   <!-- horizontal scan line -->
   <line x1="35" y1="55" x2="85" y2="55" stroke="url(#a-scan)" stroke-width="0.7">
@@ -52,5 +68,5 @@
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.5s" repeatCount="indefinite"/>
   </line>
   <!-- outer frame -->
-  <rect x="30" y="30" width="60" height="60" rx="13" stroke="url(#a-lg)" stroke-width="0.7" fill="none"/>
+  <rect x="30" y="30" width="60" height="60" rx="13" stroke="url(#a-lg)" stroke-width="1" fill="url(#a-fill)"/>
 </svg>

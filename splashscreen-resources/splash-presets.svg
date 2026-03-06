@@ -1,43 +1,75 @@
 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="p-lg" x1="30%" y1="0%" x2="70%" y2="100%">
-      <stop offset="0%" stop-color="currentColor" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="currentColor" stop-opacity="0.12"/>
+      <stop offset="0%" class="p-a1" stop-opacity="0.8"/>
+      <stop offset="100%" class="p-a2" stop-opacity="0.35"/>
+    </linearGradient>
+    <linearGradient id="p-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" class="p-a1"/>
+      <stop offset="100%" class="p-a2"/>
     </linearGradient>
     <linearGradient id="p-scan" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="currentColor" stop-opacity="0"/>
-      <stop offset="50%" stop-color="currentColor" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+      <stop offset="0%" class="p-a1" stop-opacity="0"/>
+      <stop offset="50%" class="p-a2" stop-opacity="0.7"/>
+      <stop offset="100%" class="p-a1" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="p-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" class="p-a1" stop-opacity="0.1"/>
+      <stop offset="100%" class="p-a2" stop-opacity="0.05"/>
+    </linearGradient>
+    <style>
+      .p-a1 { stop-color: #4a9fd4; }
+      .p-a2 { stop-color: #8b5fbf; }
+      @media (prefers-color-scheme: dark) {
+        .p-a1 { stop-color: #5ea8c9; }
+        .p-a2 { stop-color: #9b4ea0; }
+      }
+    </style>
   </defs>
-  <g opacity="1">
-    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
-    <rect x="36" y="36" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.55" stroke-width="1" fill="currentColor" fill-opacity="0.07"/>
-    <circle cx="47" cy="47" r="4" fill="currentColor" opacity="0.55">
-      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.2s" repeatCount="indefinite"/>
+  <g>
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="2.4s" repeatCount="indefinite"/>
+    <rect x="36" y="36" width="22" height="22" rx="6" stroke="url(#p-accent)" stroke-opacity="0.6" stroke-width="1" fill="url(#p-accent)" fill-opacity="0.1">
+      <animate attributeName="fill-opacity" values="0.06;0.18;0.06" dur="2.4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="47" cy="47" r="4" fill="url(#p-accent)" opacity="0.85">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3.5;4.5;3.5" dur="2.4s" repeatCount="indefinite"/>
     </circle>
   </g>
-  <g opacity="1">
-    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="0.4s" repeatCount="indefinite"/>
-    <rect x="62" y="36" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.3" stroke-width="1" fill="currentColor" fill-opacity="0.03"/>
-    <circle cx="73" cy="47" r="2.5" fill="currentColor" opacity="0.3"/>
+  <g>
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+    <rect x="62" y="36" width="22" height="22" rx="6" stroke="url(#p-accent)" stroke-opacity="0.4" stroke-width="1" fill="url(#p-accent)" fill-opacity="0.05">
+      <animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="73" cy="47" r="2.5" fill="url(#p-accent)" opacity="0.55">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;3;2" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
   </g>
-  <g opacity="1">
-    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="0.8s" repeatCount="indefinite"/>
-    <rect x="36" y="62" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.3" stroke-width="1" fill="currentColor" fill-opacity="0.03"/>
-    <circle cx="47" cy="73" r="2.5" fill="currentColor" opacity="0.3"/>
+  <g>
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
+    <rect x="36" y="62" width="22" height="22" rx="6" stroke="url(#p-accent)" stroke-opacity="0.4" stroke-width="1" fill="url(#p-accent)" fill-opacity="0.05">
+      <animate attributeName="fill-opacity" values="0.03;0.12;0.03" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="47" cy="73" r="2.5" fill="url(#p-accent)" opacity="0.55">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2;3;2" dur="2.4s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
   </g>
-  <g opacity="1">
-    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" begin="1.2s" repeatCount="indefinite"/>
-    <rect x="62" y="62" width="22" height="22" rx="6" stroke="currentColor" stroke-opacity="0.45" stroke-width="1" fill="currentColor" fill-opacity="0.05"/>
-    <circle cx="73" cy="73" r="3" fill="currentColor" opacity="0.35">
-      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+  <g>
+    <animate attributeName="opacity" values="0.75;1;0.75" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    <rect x="62" y="62" width="22" height="22" rx="6" stroke="url(#p-accent)" stroke-opacity="0.5" stroke-width="1" fill="url(#p-accent)" fill-opacity="0.08">
+      <animate attributeName="fill-opacity" values="0.05;0.16;0.05" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="73" cy="73" r="3" fill="url(#p-accent)" opacity="0.7">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2.4s" begin="1.2s" repeatCount="indefinite"/>
     </circle>
   </g>
   <line x1="31" y1="60" x2="89" y2="60" stroke="url(#p-scan)" stroke-width="0.8">
-    <animate attributeName="y1" values="31;89;31" dur="4.5s" repeatCount="indefinite"/>
-    <animate attributeName="y2" values="31;89;31" dur="4.5s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="y1" values="31;89;31" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="31;89;31" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4s" repeatCount="indefinite"/>
   </line>
-  <rect x="30" y="30" width="60" height="60" rx="13" stroke="url(#p-lg)" stroke-width="0.7" fill="none"/>
+  <rect x="30" y="30" width="60" height="60" rx="13" stroke="url(#p-lg)" stroke-width="1" fill="url(#p-fill)"/>
 </svg>
